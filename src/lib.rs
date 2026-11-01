@@ -15,7 +15,7 @@ pub mod item;
 /// assert_eq!(dw17::show_item(), "Pretzels $1.25");
 /// ```
 pub fn show_item() -> String {
-    let item = Item::new("A1", "Pretzels", 125);
+    let item = item::Item::new("A1", "Pretzels", 125);
     format!("{} ${}", item.name(), item.price_dollars())
 }
 
@@ -28,5 +28,5 @@ pub fn show_item() -> String {
 /// assert_eq!(dw17::slot_label(&item), "[B4]");
 /// ```
 pub fn slot_label(item: &item::Item) -> String {
-    format!("[{}]", item.code)
+    format!("[{}]", item.code())
 }
